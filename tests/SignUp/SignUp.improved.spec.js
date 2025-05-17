@@ -92,4 +92,5 @@ test('Complete user registration on automationexercise.com', async ({ page }) =>
   }
   
   console.log('✅ Test completed successfully');
+  //gitttttttttttttttttttttttttttt
 });
