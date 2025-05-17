@@ -1,0 +1,18 @@
+{
+  "name": "playwright-practice",
+  "version": "1.0.0",
+  "description": "A project to practice Playwright testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "typescript": "^4.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

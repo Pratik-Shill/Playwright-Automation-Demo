@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.automationexercise.com/');
+  await page.getByRole('link', { name: ' Signup / Login' }).click();
+  await page.getByRole('textbox', { name: 'Name' }).click();
+  await page.getByRole('textbox', { name: 'Name' }).fill('New TestUser');
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('protikshill58@gmail.com');
+  await page.getByRole('button', { name: 'Signup' }).click();
+  await page.getByRole('radio', { name: 'Mr.' }).check();
+  await page.getByRole('textbox', { name: 'Name *', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Password *' }).click();
+  await page.getByRole('textbox', { name: 'Password *' }).fill('Pratik@24');
+  await page.locator('#days').selectOption('24');
+  await page.locator('#months').selectOption('1');
+  await page.locator('#years').selectOption('1997');
+  await page.getByRole('textbox', { name: 'First name *' }).click();
+  await page.getByRole('textbox', { name: 'First name *' }).fill('Pratik');
+  await page.getByRole('textbox', { name: 'Last name *' }).click();
+  await page.getByRole('textbox', { name: 'Last name *' }).fill('Shill');
+  await page.getByRole('textbox', { name: 'Company', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Company', exact: true }).fill('Test Company');
+  await page.getByRole('textbox', { name: 'Address * (Street address, P.' }).click();
+  await page.getByRole('textbox', { name: 'Address * (Street address, P.' }).fill('B Block,abc Road');
+  await page.getByLabel('Country *').selectOption('United States');
+  await page.getByRole('textbox', { name: 'State *' }).click();
+  await page.getByRole('textbox', { name: 'State *' }).fill('Test');
+  await page.getByRole('textbox', { name: 'City * Zipcode *' }).click();
+  await page.getByRole('textbox', { name: 'City * Zipcode *' }).fill('BLA BLA');
+  await page.locator('#zipcode').click();
+  await page.locator('#zipcode').fill('1340');
+  await page.getByRole('paragraph').filter({ hasText: 'Mobile Number *' }).click();
+  await page.getByRole('textbox', { name: 'Mobile Number *' }).fill('01791334788');
+  await page.getByRole('button', { name: 'Create Account' }).click();
+  await page.getByRole('link', { name: 'Continue' }).click();
+});
